@@ -14,11 +14,11 @@ class CreateTripsTable extends Migration
     public function up()
     {
         Schema::create('trips', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('city_from_id');
             $table->string('city_to_id');
             $table->string('booking_date');
-            $table->string('available_seats')->default(28);
+            $table->string('available_seats')->default(12);
             $table->timestamps();
         });
     }
