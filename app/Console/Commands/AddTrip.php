@@ -40,13 +40,7 @@ class AddTrip extends Command
      */
     public function handle()
     {
-        $base_station_id = City::select('id')->first()->id;
-        $end_station_id = City::select('id')->orderBy('id', 'desc')->first()->id;
-
-        Trip::create([
-            'city_from_id' => $base_station_id,
-            'city_to_id' => $end_station_id,
-            'booking_date' => Carbon::now()->addDays(1)->format('Y-m-d'),
-        ]);
+        $trip_seeder = new \TripSeeder();
+        $trip_seeder->run(0);
     }
 }

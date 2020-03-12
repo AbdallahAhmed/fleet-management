@@ -9,20 +9,23 @@ class TripSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     * @param null $days
      * @return void
      */
-    public function run()
+    public function run($days = null)
     {
-        $base_station_id = City::select('id')->first()->id;
-        $end_station_id = City::select('id')->orderBy('id', 'desc')->first()->id;
+        $cities = City::pluck('id')->toArray();
 
-        for($i = 0; $i <= 2; $i++){
-            Trip::create([
-                'city_from_id' => $base_station_id,
-                'city_to_id' => $end_station_id,
-                'booking_date' => Carbon::now()->addDays($i)->format('Y-m-d'),
-            ]);
+        for ($i = 0; $i < (isset($days) ? 1 : 3); $i++) {
+            $start = rand($cities[0], $cities[(count($cities) - 1) / 2]);
+            $end = rand($start, $cities[count($cities) - 1]);
+            for ($j = 0; $j < 3; $j++) {
+                Trip::create([
+                    'source_id' => $start,
+                    'destination_id' => $end,
+                    'date_to_book' => Carbon::now()->addDays(isset($days) ? $days :$j)->format('Y-m-d'),
+                ]);
+            }
         }
     }
 }

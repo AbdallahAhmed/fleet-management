@@ -20,7 +20,8 @@ Route::post('/auth/register', 'API\AuthController@register');
 
 Route::group(["middleware" => ['api-auth']], function ($router) {
     Route::group(["prefix" => 'trips'], function ($router) {
-        $router->post('/book', 'API\BookingController@store');
+        $router->post('/list', 'API\TripsController@tripsListing');
+        $router->post('/book', 'API\BookingsController@store');
     });
 });
 

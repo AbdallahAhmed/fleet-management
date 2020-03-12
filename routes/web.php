@@ -1,5 +1,6 @@
 <?php
 
+use App\Trip;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    $trips = Trip::where([
+        ['city_from_id', '<=', 6],
+        /*['available_seats', '>', 0]*/
+    ])->get()->pluck('id')->toArray();
+    dd($trips);
     return view('welcome');
 });

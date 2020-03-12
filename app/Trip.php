@@ -16,7 +16,7 @@ class Trip extends Model
      */
     protected $table = "trips";
 
-    protected $fillable = ['city_from_id', 'city_to_id', 'booking_date'];
+    protected $fillable = ['source_id', 'destination_id', 'date_to_book'];
 
     /**
      * Indicates if the model should be timestamped.
@@ -33,7 +33,7 @@ class Trip extends Model
      */
     public function scopeOpened($query)
     {
-        return $query->where('booking_date', '>=', Carbon::now()->format('Y-m-d'))->get();
+        return $query->where('date_to_book', '>=', Carbon::now()->format('Y-m-d'))->get();
     }
 
     /**
@@ -51,4 +51,8 @@ class Trip extends Model
     {
         return $this->belongsToMany(User::class, 'bookings');
     }
+
+    /*public function getAvailableSeatsAttribute($from_id, $to_id){
+
+    }*/
 }

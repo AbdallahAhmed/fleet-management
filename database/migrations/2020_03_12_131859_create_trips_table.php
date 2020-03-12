@@ -15,10 +15,9 @@ class CreateTripsTable extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('city_from_id');
-            $table->string('city_to_id');
-            $table->string('booking_date');
-            $table->string('available_seats')->default(12);
+            $table->integer('source_id');
+            $table->integer('destination_id');
+            $table->date('date_to_book');
             $table->timestamps();
         });
     }
