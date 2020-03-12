@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -52,5 +54,23 @@ class User extends Authenticatable
     public function trips()
     {
         return $this->belongsToMany(Trip::class, 'bookings');
+    }
+
+    /**
+     * generate API token
+     * @return string
+     */
+    static function newApiToken()
+    {
+        return Str::random(60);
+    }
+
+    /*
+     * Set password attribute
+     * @param $password
+     */
+    function setPasswordAttribute($password)
+    {
+        $this->attributes["password"] = Hash::make($password);
     }
 }
