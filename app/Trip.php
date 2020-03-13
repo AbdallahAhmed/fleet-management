@@ -52,7 +52,30 @@ class Trip extends Model
         return $this->belongsToMany(User::class, 'bookings');
     }
 
-    /*public function getAvailableSeatsAttribute($from_id, $to_id){
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\hasOne
+     */
+    public function source()
+    {
+        return $this->hasOne(City::class, 'id','source_id');
+    }
 
-    }*/
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\hasOne
+     */
+    public function destination()
+    {
+        return $this->hasOne(City::class, 'id','destination_id');
+    }
+
+    public function getStatusAttribute()
+    {
+        return $this->date_to_book >= Carbon::now()->format('Y-m-d') ? 1 : 0;
+    }
+
+    public function getCitiesAttribute(){
+        $source_id = $this->source_id;
+        $destination_id = $this->destination_id;
+        return City::whereBetween('id', array($source_id, $destination_id))->get();
+    }
 }

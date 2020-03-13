@@ -73,7 +73,17 @@ Returning array of Trips with available seats count:
                 "date_to_book": "2020-03-12",
                 "created_at": "2020-03-12T23:34:12.000000Z",
                 "updated_at": "2020-03-12T23:34:12.000000Z",
-                "available_seats": 11
+                "available_seats": 11,
+                "source": {
+                                "id": 4,
+                                "name": "Damietta",
+                                "order": 4
+                            },
+                            "destination": {
+                                "id": 8,
+                                "name": "Port Said",
+                                "order": 8
+                            }
             },
             {
                 "id": 8,
@@ -82,7 +92,17 @@ Returning array of Trips with available seats count:
                 "date_to_book": "2020-03-13",
                 "created_at": "2020-03-12T23:34:12.000000Z",
                 "updated_at": "2020-03-12T23:34:12.000000Z",
-                "available_seats": 5
+                "available_seats": 5,
+                "source": {
+                                "id": 4,
+                                "name": "Damietta",
+                                "order": 4
+                            },
+                            "destination": {
+                                "id": 8,
+                                "name": "Port Said",
+                                "order": 8
+                            }
             }
         }
         
@@ -110,5 +130,16 @@ Returning Booking object with unique seat number
              "seat_no": "kEEUQcPT",
              "updated_at": "2020-03-13T00:10:43.000000Z",
              "created_at": "2020-03-13T00:10:43.000000Z",
-        }
+             "source": {
+                         "id": 4,
+                         "name": "Damietta",
+                         "order": 4
+                     },
+                     "destination": {
+                         "id": 5,
+                         "name": "Dakahlia",
+                         "order": 5
+                     }
+        },
+        
         

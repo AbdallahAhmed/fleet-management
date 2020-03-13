@@ -31,14 +31,17 @@ class TripsController extends ApiController
         $trips = Trip::where([
             ['source_id', '<=', $source_id],
             ['destination_id', '>=', $destination_id],
-        ])->get();
+        ])->get()->load(['source', 'destination']);
 
         //returning only trips with available seats
-        $trips = $trips->filter(function ($trip) use ($destination_id) {
+        $trips = $trips->filter(function ($trip) use ($destination_id, $source_id) {
             $count = $trip->bookings()->where([
-                ['destination_id', '>=', $destination_id],
-                ['source_id', '<=', $destination_id]
-                ])->count();
+                ['source_id', '<=', $source_id],
+                ['destination_id', '>=', $source_id]
+                ])->orWhere([
+                ['source_id', '>=', $source_id],
+                ['destination_id', '<=', $destination_id]
+            ])->count();
             $trip->available_seats = 12 - $count;
             return $count < 12;
         });

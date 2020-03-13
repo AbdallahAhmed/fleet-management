@@ -19,4 +19,31 @@ class Booking extends Model
      * @var bool
      */
     public $timestamps = true;
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\hasOne
+     */
+    public function source()
+    {
+        return $this->hasOne(City::class, 'id','source_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\hasOne
+     */
+    public function destination()
+    {
+        return $this->hasOne(City::class, 'id','destination_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\belongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
 }

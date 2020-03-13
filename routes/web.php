@@ -15,10 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $trips = Trip::where([
-        ['city_from_id', '<=', 6],
-        /*['available_seats', '>', 0]*/
-    ])->get()->pluck('id')->toArray();
-    dd($trips);
     return view('welcome');
+});
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function ($router) {
+    $router->any('/', 'AuthController@login')->middleware('guest')->name('login');
+    Route::group(['middleware' => 'auth'], function ($router) {
+        $router->post('/logout', 'AuthController@logout')->name('logout');
+        $router->get('/dashboard', 'HomeController@index')->name('home');
+        $router->get('/trips', 'TripsController@index')->name('trips.index');
+        $router->any('/trips/create', 'TripsController@store')->name('trips.create');
+        $router->get('/trips/{id}/show', 'TripsController@show')->name('trips.show');
+    });
 });
