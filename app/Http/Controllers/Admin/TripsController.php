@@ -33,6 +33,7 @@ class TripsController extends Controller
             $validator = Validator::make($request->all(), [
                 'source' => 'required|in:'.implode(",",$cities),
                 'destination' => 'required|in:'.implode(",",$cities).'|different:source',
+                'date' => 'nullable|date_format:Y-m-d'
             ], [
                 'source.in' => "Source city is unknown!",
                 'destination.in' => "Destination city is unknown!",
@@ -41,7 +42,7 @@ class TripsController extends Controller
             if ($validator->fails()) {
                 return redirect()->back()->withErrors($validator)->withInput($request->all());
             }
-            $date = $request->filled('date') ? $request->get('date') : Carbon::now()->format('Y-m-d');
+            $date = $request->filled('date') ? Carbon::make($request->get('date'))->format('Y-m-d') : Carbon::now()->format('Y-m-d');
             $trip = new Trip();
             $trip->source_id = $request->get('source');
             $trip->destination_id = $request->get('destination');

@@ -3,14 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="647369bc-750e-492f-b2ab-829aca57d286" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Booking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/BookingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/BookingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/TripsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/TripsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Trip.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Trip.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TripsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TripsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/trips/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/trips/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,28 +34,28 @@
         <counts>
           <entry key="css" value="16" />
           <entry key="env" value="1" />
-          <entry key="html" value="6" />
-          <entry key="js" value="6" />
+          <entry key="html" value="7" />
+          <entry key="js" value="9" />
           <entry key="jscsrc" value="1" />
           <entry key="json" value="2" />
           <entry key="less" value="4" />
           <entry key="map" value="2" />
           <entry key="md" value="2" />
-          <entry key="php" value="172" />
+          <entry key="php" value="181" />
           <entry key="scss" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="42" />
+          <entry key="Blade" value="48" />
           <entry key="CSS" value="16" />
-          <entry key="HTML" value="6" />
+          <entry key="HTML" value="7" />
           <entry key="JSCS" value="1" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="6" />
+          <entry key="JavaScript" value="9" />
           <entry key="Less" value="4" />
           <entry key="Markdown" value="2" />
-          <entry key="PHP" value="130" />
+          <entry key="PHP" value="133" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SCSS" value="1" />
           <entry key="SourceMap" value="2" />
@@ -69,21 +67,23 @@
           <entry key="dummy" value="7" />
           <entry key="env" value="53" />
           <entry key="html" value="27" />
+          <entry key="js" value="11" />
           <entry key="json" value="17" />
           <entry key="less" value="13" />
           <entry key="md" value="943" />
-          <entry key="php" value="11316" />
+          <entry key="php" value="12075" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="2581" />
+          <entry key="Blade" value="2800" />
           <entry key="CSS" value="7" />
           <entry key="HTML" value="27" />
           <entry key="JSON" value="17" />
+          <entry key="JavaScript" value="11" />
           <entry key="Less" value="13" />
           <entry key="Markdown" value="943" />
-          <entry key="PHP" value="8735" />
+          <entry key="PHP" value="9275" />
           <entry key="PLAIN_TEXT" value="60" />
         </counts>
       </usages-collector>
@@ -103,71 +103,58 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/trips/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
+            <state>
+              <caret selection-end-line="2" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/TripsController.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="49" column="65" selection-start-line="49" selection-start-column="65" selection-end-line="49" selection-end-column="65" />
-              <folding>
-                <element signature="e#46#59#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="420">
+              <caret line="28" column="67" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/messages.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/trips/show.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="16" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Desktop/material-dashboard-master/examples/user.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="272" column="18" selection-start-line="272" selection-start-column="18" selection-end-line="272" selection-end-column="85" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/BookingsController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+              <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
               <folding>
-                <element signature="e#44#60#0#PHP" expanded="true" />
+                <element signature="e#46#62#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Booking.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="46" column="61" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="46" selection-end-column="61" />
+            <state relative-caret-position="148">
+              <caret line="26" column="80" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="80" />
+              <folding>
+                <element signature="e#23#62#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/material-dashboard-master/examples/dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="169" selection-start-line="169" selection-end-line="584" />
+              <folding>
+                <element signature="n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -186,6 +173,7 @@
       <find>simple tables</find>
       <find>local</find>
       <find>FOLLOW</find>
+      <find>autoclose</find>
     </findStrings>
     <replaceStrings>
       <replace>ltr</replace>
@@ -197,8 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/ApiContorller.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/ApiController.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
@@ -215,7 +201,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2020_03_12_131918_create_bookings_table.php" />
         <option value="$PROJECT_DIR$/public/admin_assets/dist/css/bootstrap-rtl.min.css" />
         <option value="$PROJECT_DIR$/public/admin_assets/dist/css/AdminLTE.css" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
         <option value="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" />
@@ -224,9 +209,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/TripsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/BookingsController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/trips/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/login.blade.php" />
         <option value="$PROJECT_DIR$/public/admin_assets/dist/css/rtl.css" />
         <option value="$PROJECT_DIR$/public/admin_assets/build/less/variables.less" />
         <option value="$PROJECT_DIR$/public/admin_assets/build/less/sidebar.less" />
@@ -238,16 +221,21 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AuthController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/layouts/sidebar.blade.php" />
         <option value="$USER_HOME$/Desktop/material-dashboard-master/examples/tables.html" />
-        <option value="$PROJECT_DIR$/app/Booking.php" />
         <option value="$PROJECT_DIR$/app/Trip.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/trips/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/TripsController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/layouts/message.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/trips/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/layouts/messages.blade.php" />
+        <option value="$PROJECT_DIR$/public/admin_assets/js/bootstrap-datepicker.js" />
         <option value="$PROJECT_DIR$/resources/views/admin/trips/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/TripsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/login.blade.php" />
+        <option value="$PROJECT_DIR$/app/Booking.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" />
       </list>
     </option>
   </component>
@@ -465,14 +453,6 @@
               <item name="fleet-management" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fleet-management" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fleet-management" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -526,12 +506,12 @@
       <updated>1584015255795</updated>
       <workItem from="1584015257030" duration="3135000" />
       <workItem from="1584020120682" duration="45807000" />
-      <workItem from="1584110644737" duration="17021000" />
+      <workItem from="1584110644737" duration="20760000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65963000" />
+    <option name="totallyTimeSpent" value="69702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
@@ -552,7 +532,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.63109756" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.076219514" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.21493903" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -566,20 +546,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Auth/StatefulGuard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="157" column="13" selection-start-line="157" selection-start-column="13" selection-end-line="157" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Auth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -625,20 +591,6 @@
           <folding>
             <element signature="e#28#61#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -733,13 +685,6 @@
     <entry file="file://$PROJECT_DIR$/public/admin_assets/css/material-dashboard.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/material-dashboard-master/examples/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/sidebar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -778,25 +723,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Booking.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="47" column="3" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/trips/bookings.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-          <folding>
-            <element signature="e#7#20#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/admin_assets/css/locales/bootstrap-datepicker.ar.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -804,26 +732,6 @@
     <entry file="file://$PROJECT_DIR$/public/admin_assets/css/datepicker3.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-405" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin_assets/js/bootstrap-datepicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="206" column="49" selection-start-line="206" selection-start-column="49" selection-end-line="206" selection-end-column="49" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Trip.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
-          <folding>
-            <element signature="e#24#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/admin_assets/js/jquery.min.js">
@@ -849,13 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/BookingsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -869,7 +770,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
-          <caret line="46" column="61" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="46" selection-end-column="61" />
+          <caret line="46" column="61" selection-start-line="41" selection-start-column="8" selection-end-line="46" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -880,13 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/trips/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/trips/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -894,13 +788,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/TripsController.php">
+    <entry file="file://$PROJECT_DIR$/public/admin_assets/js/bootstrap-datepicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="49" column="65" selection-start-line="49" selection-start-column="65" selection-end-line="49" selection-end-column="65" />
+        <state relative-caret-position="324">
+          <caret line="1677" column="17" selection-start-line="1677" selection-start-column="8" selection-end-line="1677" selection-end-column="17" />
           <folding>
-            <element signature="e#46#59#0#PHP" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding>
+            <element signature="e#7#20#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/trips/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="38" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="13" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -911,10 +836,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/TripsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="35" />
+          <folding>
+            <element signature="e#46#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/trips/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
+        <state>
+          <caret selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/material-dashboard-master/examples/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="169" selection-start-line="169" selection-end-line="584" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Trip.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+          <folding>
+            <element signature="e#24#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Booking.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="26" column="80" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="80" />
+          <folding>
+            <element signature="e#23#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+          <folding>
+            <element signature="e#46#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="67" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
         </state>
       </provider>
     </entry>

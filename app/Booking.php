@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Booking extends Model
 {
@@ -21,6 +22,11 @@ class Booking extends Model
     public $timestamps = true;
 
 
+    public function scopeOpened($query){
+        return $query->whereHas('trip', function ($q){
+          return $q->where('date_to_book', '>=', Carbon::now()->format('Y-m-d'));
+        });
+    }
     /**
      * @return \Illuminate\Database\Eloquent\Relations\hasOne
      */
@@ -43,6 +49,10 @@ class Booking extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function trip(){
+        return $this->hasOne(Trip::class, 'id', 'trip_id');
     }
 
 

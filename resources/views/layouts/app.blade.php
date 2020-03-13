@@ -2,55 +2,28 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Fleet Management</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.4 -->
-    <link rel="stylesheet" href="{{ asset('admin_assets/bootstrap/css/bootstrap.min.css')}}">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- Ionicons 2.0.0 -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link href="{{ asset('admin_assets/plugins/bootstrap-fileinput/bootstrap-fileinput.css')}}" rel="stylesheet"
-          type="text/css"/>
-    <link href="{{ asset('admin_assets/plugins/select2/select2.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{ asset('admin_assets/plugins/daterangepicker/daterangepicker-bs3.css')}}" rel="stylesheet"
-          type="text/css"/>
-    <link href="{{ asset('admin_assets/plugins/datepicker/datepicker3.css')}}" rel="stylesheet" type="text/css"/>
-
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('admin_assets/dist/css/AdminLTE.min.css')}}">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="{{ asset('admin_assets/dist/css/skins/_all-skins.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('admin_assets/plugins/datatables/dataTables.bootstrap.css')}}">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    @yield('custom_style')
-
-    <style>
-
-        .error {
-            color: red;
-        }
-
-        table > thead > tr > th {
-            text-align: left;
-        }
-    </style>
-
+    <title>Fleet Management | Dashboard | @yield('title')</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport'/>
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="{{asset('admin_assets/css/material-dashboard.css?v=2.1.2')}}" rel="stylesheet"/>
+    <link href="{{asset('admin_assets/css/datepicker3.css')}}" type="text/css" rel="stylesheet"/>
+    <link href="{{asset('admin_assets/demo/demo.css')}}" rel="stylesheet"/>
+    <script src="{{asset('admin_assets/js/jquery.js')}}"></script>
+    <script src="{{asset('admin_assets/js/core/popper.min.js')}}"></script>
+    <script src="{{asset('admin_assets/js/bootstrap-datepicker.js')}}"></script>
+    <script src="{{asset('admin_assets/js/core/bootstrap-material-design.min.js')}}"></script>
+    @stack('styles')
 </head>
-
-
-<body class="" dir="ltr">
-
+<body class="">
+<div class="wrapper ">
+    <div class="main-panel">
         @yield('content')
-
-
+    </div>
+</div>
+@stack('scripts')
 </body>
 </html>

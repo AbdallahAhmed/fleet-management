@@ -43,7 +43,6 @@
                                             <div class="date-picker" data-date-format="dd-mm-yyyy"
                                                  data-date-start-date="+0d">
                                                 <input class="form-control" name="date">
-                                                <span class="input-group-btn"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -63,7 +62,9 @@
         $(document).ready(function () {
             let source, destination;
             $('.date-picker').datepicker({
-                format: 'dd-mm-yyyy',
+                format: 'yyyy-mm-dd',
+                autoClose: true,
+
             });
             $('form').on('submit', function () {
                 source = $('[name="source"]').val();
