@@ -67,12 +67,11 @@
 
             });
             $('form').on('submit', function () {
-                source = $('[name="source"]').val();
-                destination = $('[name="destination"]').val();
+                source = +$('[name="source"]').val();
+                destination = +$('[name="destination"]').val();
                 return validate();
             })
             function validate() {
-                console.log(source,destination)
                 if (source > destination) {
                     $('#source').addClass('alert-danger');
                     $('#destination').addClass('alert-danger');

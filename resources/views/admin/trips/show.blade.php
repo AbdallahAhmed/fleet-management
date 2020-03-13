@@ -29,29 +29,39 @@
                                 @endforeach
                             </p>
                         </div>
+                    </div>
+                    <div class="card">
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-hover">
-                                    <thead class="">
-                                    <th>ID</th>
-                                    <th>Source</th>
-                                    <th>Destination</th>
-                                    <th>Seat #</th>
-                                    <th>User</th>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($trip->bookings as $booking)
-                                        <tr data-href="{{route('trips.show', $trip->id)}}">
-                                            <td>{{$booking->id}}</td>
-                                            <td>{{$booking->source->name}}</td>
-                                            <td>{{$booking->destination->name}}</td>
-                                            <td>{{$booking->seat_no}}</td>
-                                            <td>{{$booking->user->name}}</td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
+                            @if(count($bookings))
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="">
+                                        <th>ID</th>
+                                        <th>Source</th>
+                                        <th>Destination</th>
+                                        <th>Seat #</th>
+                                        <th>User</th>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($bookings as $booking)
+                                            <tr data-href="{{route('trips.show', $trip->id)}}">
+                                                <td>{{$booking->id}}</td>
+                                                <td>{{$booking->source->name}}</td>
+                                                <td>{{$booking->destination->name}}</td>
+                                                <td>{{$booking->seat_no}}</td>
+                                                <td>{{$booking->user->name}}</td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            @else
+                                <div class="card">
+                                    <div class="card-header card-header-primary">
+                                        <h4 class="card-title ">No Bookings</h4>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
