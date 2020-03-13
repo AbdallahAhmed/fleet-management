@@ -26,9 +26,9 @@ class BookingsController extends ApiController
         if ($validator->fails()) {
             return $this->errorResponse(($validator->errors()->all()));
         }
-        $source_id = $request->get('start_station');
-        $destination_id = $request->get('end_station');
-        $trip_id = $request->get('trip_id');
+        $source_id = +$request->get('start_station');
+        $destination_id = +$request->get('end_station');
+        $trip_id = +$request->get('trip_id');
         $user_id = Auth::guard('api')->id();
         $booked = Booking::where([
             ['trip_id', '=', $trip_id],
