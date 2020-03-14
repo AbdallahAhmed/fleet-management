@@ -5,6 +5,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use phpDocumentor\Reflection\Types\Collection;
 
 class Trip extends Model
 {
@@ -49,7 +50,7 @@ class Trip extends Model
      */
     public function users()
     {
-        return $this->belongsToMany(User::class, 'bookings');
+        return $this->belongsToMany(User::class, 'bookings')->distinct();
     }
 
     /**
@@ -68,14 +69,13 @@ class Trip extends Model
         return $this->hasOne(City::class, 'id','destination_id');
     }
 
-    public function getStatusAttribute()
-    {
-        return $this->date_to_book >= Carbon::now()->format('Y-m-d') ? 1 : 0;
-    }
-
+    /**
+     * Trip Cities
+     * @return Collection
+     */
     public function getCitiesAttribute(){
         $source_id = $this->source_id;
         $destination_id = $this->destination_id;
-        return City::whereBetween('id', array($source_id, $destination_id))->get();
+        return City::whereBetween('id', array($source_id, $destination_id))->orderBy('id', 'ASC')->get();
     }
 }

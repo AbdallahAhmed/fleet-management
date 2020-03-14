@@ -65,7 +65,7 @@ class User extends Authenticatable
         return Str::random(60);
     }
 
-    /*
+    /**
      * Set password attribute
      * @param $password
      */

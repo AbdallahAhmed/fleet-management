@@ -26,5 +26,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function ($router) {
         $router->get('/trips', 'TripsController@index')->name('trips.index');
         $router->any('/trips/create', 'TripsController@store')->name('trips.create');
         $router->get('/trips/{id}/show', 'TripsController@show')->name('trips.show');
+        $router->post('/trips/{id}/book', 'BookingsController@store')->name('trips.book.store');
+        $router->get('/trips/{id}/book', 'BookingsController@create')->name('trips.book');
+        $router->post('/trips/{id}/check', 'BookingsController@checkAvailable')->name('trips.check');
     });
 });

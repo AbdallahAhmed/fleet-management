@@ -11,8 +11,15 @@ use Illuminate\Support\Facades\Validator;
 
 class TripsController extends Controller
 {
+
     public $data = array();
 
+    /**
+     * GET /admin/trips
+     * @route trips.index
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index(Request $request)
     {
         $this->data['source'] = null;
@@ -37,6 +44,12 @@ class TripsController extends Controller
         return view('admin.trips.index', $this->data)->with($request->all());
     }
 
+    /**
+     * POST /admin/trips/create
+     * @route trips.store
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function store(Request $request)
     {
         if ($request->method() == "POST") {
@@ -66,11 +79,18 @@ class TripsController extends Controller
 
     }
 
+    /**
+     * GET /admin/trips/{id}/show
+     * @route trips.show
+     * @param Integer id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show($id)
     {
         $trip = Trip::findOrFail($id);
         $this->data['trip'] = $trip;
         $this->data['bookings'] = $trip->bookings;
+        $this->data['status'] = $trip->date_to_book >= Carbon::now()->format('Y-m-d');
         return view('admin.trips.show', $this->data);
     }
 }

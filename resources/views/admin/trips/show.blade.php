@@ -14,7 +14,13 @@
                 <div class="col-md-2">
                     <a href="{{route('trips.create')}}" class="btn btn-primary">Add New Trip</a>
                 </div>
+                @if($status)
+                    <div class="col-md-2">
+                        <a href="{{route('trips.book', $trip->id)}}" class="btn btn-success">Book Seat</a>
+                    </div>
+                @endif
             </div>
+            @include('admin.layouts.messages')
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -43,9 +49,9 @@
                                         <th>User</th>
                                         </thead>
                                         <tbody>
-                                        @foreach($bookings as $booking)
+                                        @foreach($bookings as $key => $booking)
                                             <tr data-href="{{route('trips.show', $trip->id)}}">
-                                                <td>{{$booking->id}}</td>
+                                                <td>{{$key+1}}</td>
                                                 <td>{{$booking->source->name}}</td>
                                                 <td>{{$booking->destination->name}}</td>
                                                 <td>{{$booking->seat_no}}</td>

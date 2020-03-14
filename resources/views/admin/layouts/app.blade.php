@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Fleet Management | Dashboard | @yield('title')</title>
+    @section('meta')
+        <meta name="title" content="Fleet Management | Dashboard">
+        <meta name="description" content="Fleet Management Bus bookings">
+    @show
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport'/>
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
