@@ -17,9 +17,9 @@ class TripSeeder extends Seeder
         $cities = City::pluck('id')->toArray();
 
         for ($i = 0; $i < (isset($days) ? 1 : 3); $i++) {
-            $start = rand($cities[0], $cities[(count($cities) - 1) / 2]);
-            $end = rand($start, $cities[count($cities) - 1]);
             for ($j = 0; $j < 3; $j++) {
+                $start = rand($cities[0], $cities[(count($cities) - 1) / 2]);
+                $end = rand($start, $cities[count($cities) - 1]);
                 Trip::create([
                     'source_id' => $start,
                     'destination_id' => $end,

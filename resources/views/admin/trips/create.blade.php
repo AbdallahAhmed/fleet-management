@@ -74,7 +74,7 @@
                 if (source > destination) {
                     $('#source').addClass('alert-danger');
                     $('#destination').addClass('alert-danger');
-                    alert("You cannot choose a source behind the destination");
+                    alert("You cannot choose a destination behind the source");
                     return false;
                 }
                 else if (source === destination) {
