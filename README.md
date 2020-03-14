@@ -64,7 +64,9 @@ Using route /admin/login
 
 /admin/dashboard
 
-### You Can book a seat on a trip by visiting an upcoming trip
+## API Endpoints
+
+#### You Can book a seat on a trip by visiting an upcoming trip
 
 /admin/trips/{id}/book
 
@@ -78,7 +80,7 @@ Create your own users with endpoint /api/auth/register
             "name": string
         } 
 
-## Listing available trips by choosing source and destination stations endpoint
+#### Listing available trips by choosing source and destination stations endpoint
 
 Using OAuthApi authentication: 
     
@@ -169,7 +171,7 @@ Returning Booking object with unique seat number
         },
 
 
-#### Testing
+## Testing
 
 Create your test database with its configuration in .env file (DB_DATABASE_TEST), default driver is "sqlite" - you can change it from ./phpunit.xml
 
