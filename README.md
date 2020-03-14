@@ -50,7 +50,13 @@ You can add cities as much as you can from config/constants.php
         ],
     ];
 	
-Create your own users with endpoint /api/auth/register 
+Create your own users with endpoint /api/auth/register
+
+        {
+            "email": string,
+            "password": string,
+            "name": string
+        } 
 
 ## Listing available trips by choosing source and destination stations endpoint
 
@@ -142,4 +148,24 @@ Returning Booking object with unique seat number
                      }
         },
         
-        
+## Admin Dashboard
+
+#### Register
+
+Using route /admin/register
+
+#### Login 
+
+Using route /admin/login
+
+#### Dashboard
+
+/admin/dashboard
+
+### You Can book a seat on a trip by visiting an upcoming trip
+
+/admin/trips/{id}/book
+
+assigning a user for the book and choose a source and destination to book a seat if available.
+
+      

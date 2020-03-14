@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function ($router) {
     $router->any('/', 'AuthController@login')->middleware('guest')->name('login');
+    $router->any('/register', 'AuthController@register')->middleware('guest')->name('register');
     Route::group(['middleware' => 'auth'], function ($router) {
         $router->post('/logout', 'AuthController@logout')->name('logout');
         $router->get('/dashboard', 'HomeController@index')->name('home');
