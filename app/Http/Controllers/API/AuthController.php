@@ -34,7 +34,7 @@ class AuthController extends ApiController
         ]);
 
         if (!$isAuthed) {
-            return $this->errorResponse(["Incorrect Email or Password."], 400);
+            return $this->errorResponse(["Credentials" => "Incorrect Email or Password."], 400);
         }
 
         $user = Auth::guard('api')->user();

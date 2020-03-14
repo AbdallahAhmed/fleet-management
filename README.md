@@ -49,7 +49,27 @@ You can add cities as much as you can from config/constants.php
           'Aswan',
         ],
     ];
-	
+
+## Admin Dashboard
+
+#### Register
+
+Using route /admin/register
+
+#### Login 
+
+Using route /admin/login
+
+#### Dashboard
+
+/admin/dashboard
+
+### You Can book a seat on a trip by visiting an upcoming trip
+
+/admin/trips/{id}/book
+
+assigning a user for the book and choose a source and destination to book a seat if available.
+
 Create your own users with endpoint /api/auth/register
 
         {
@@ -147,25 +167,20 @@ Returning Booking object with unique seat number
                          "order": 5
                      }
         },
-        
-## Admin Dashboard
 
-#### Register
 
-Using route /admin/register
+#### Testing
 
-#### Login 
+Create your test database with its configuration in .env file (DB_DATABASE_TEST), default driver is "sqlite" - you can change it from ./phpunit.xml
 
-Using route /admin/login
+Migrate the database
 
-#### Dashboard
+	php artisan migrate --database=sqlite
+	
+Seed the database
 
-/admin/dashboard
+	php artisan db:seed --database=sqlite
+	
+Run phpunit test cases
 
-### You Can book a seat on a trip by visiting an upcoming trip
-
-/admin/trips/{id}/book
-
-assigning a user for the book and choose a source and destination to book a seat if available.
-
-      
+    php artisan test

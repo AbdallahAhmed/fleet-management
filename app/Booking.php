@@ -21,6 +21,7 @@ class Booking extends Model
      */
     public $timestamps = true;
 
+    protected $fillable = ['source_id', 'destination_id', 'user_id', 'trip_id', 'seat_no'];
 
     /**
      * Scope opened

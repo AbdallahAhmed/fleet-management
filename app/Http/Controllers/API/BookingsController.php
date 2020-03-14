@@ -43,7 +43,7 @@ class BookingsController extends ApiController
             $booking->user_id = $user_id;
             $booking->seat_no = Str::random(8);
             $booking->save();
-            return $this->response($booking->load(['source', 'destination']));
+            return $this->response(["book" =>$booking->load(['source', 'destination'])]);
         }
         return $this->errorResponse(['message' => 'Sorry, no available seats right now .. Please try again later!']);
     }

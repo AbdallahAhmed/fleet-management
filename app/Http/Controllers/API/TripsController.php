@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\City;
 use App\Trip;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -38,7 +39,7 @@ class TripsController extends ApiController
             $count = $trip->bookings()->where([
                 ['source_id', '<=', $source_id],
                 ['destination_id', '>=', $source_id]
-                ])->orWhere([
+            ])->orWhere([
                 ['source_id', '>=', $source_id],
                 ['destination_id', '<=', $destination_id]
             ])->count();
@@ -46,8 +47,14 @@ class TripsController extends ApiController
             return $count < 12;
         });
         if (count($trips))
-            return $this->response($trips);
+            return $this->response(["available_trips" => $trips]);
+        return $this->response(["message" => 'Sorry, no available seats right now .. Please try again later!']);
 
-        return $this->errorResponse(["message" => 'Sorry, no available seats right now .. Please try again later!']);
+    }
+
+    public function cities()
+    {
+        $cities = City::select(['id', 'name'])->get()->toArray();
+        return $this->response(["cities" => $cities]);
     }
 }
