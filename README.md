@@ -191,7 +191,7 @@ Run phpunit test cases
     
 
 
-#Docker
+# Docker
 
 #### Installing using docker-compose
 
@@ -206,4 +206,4 @@ Build and run the Docker containers
 
         docker-compose build && docker-compose up -d
         
-Visit [http://localhost:8080](http://localhost:8080) (http://localhost:8080) and enjooooy!
+Visit [http://localhost:8080](http://localhost:8080) and enjooooy!
