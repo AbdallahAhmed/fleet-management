@@ -38,7 +38,7 @@ class TripsController extends ApiController
         $trips = $trips->filter(function ($trip) use ($destination_id, $source_id) {
             $count = $trip->bookings()->where([
                 ['source_id', '<=', $source_id],
-                ['destination_id', '>=', $source_id]
+                ['destination_id', '>', $source_id]
             ])->orWhere([
                 ['source_id', '>=', $source_id],
                 ['destination_id', '<=', $destination_id]

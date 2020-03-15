@@ -100,7 +100,7 @@ class BookingsController extends Controller
         $destination_id = $request->get('destination');
         $booked = $this->trip->bookings()->where([
             ['source_id', '<=', $source_id],
-            ['destination_id', '>=', $source_id]
+            ['destination_id', '>', $source_id]
         ])->orWhere([
             ['source_id', '>=', $source_id],
             ['destination_id', '<=', $destination_id]

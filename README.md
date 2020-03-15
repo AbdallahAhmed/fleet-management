@@ -175,6 +175,8 @@ Returning Booking object with unique seat number
 
 Create your test database with its configuration in .env file (DB_DATABASE_TEST), default driver is "sqlite" - you can change it from ./phpunit.xml
 
+Add DB_DATABASE_TEST=dbname in your .env file
+
 Migrate the database
 
 	php artisan migrate --database=sqlite
@@ -186,3 +188,22 @@ Seed the database
 Run phpunit test cases
 
     php artisan test
+    
+
+
+#Docker
+
+#### Installing using docker-compose
+
+
+        cd fleet-management
+
+Install dependencies
+
+        composer install
+
+Build and run the Docker containers
+
+        docker-compose build && docker-compose up -d
+        
+Visit [http://localhost:8080](http://localhost:8080) (http://localhost:8080) and enjooooy!
