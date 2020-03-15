@@ -191,12 +191,6 @@ class TripTest extends TestCase
         ]);
         $token = $user->api_token;
         $headers = ['Authorization' => "Bearer $token"];
-        $cities_array = City::pluck('id')->toArray();
-        $trip = Trip::create([
-            'source_id' => $cities_array[0],
-            'destination_id' => $cities_array[count($cities_array) - 1],
-            'date_to_book' => Carbon::now()->format('Y-m-d')
-        ]);
         $payload = [
             "start_station" => 3,
             "end_station" => 15,
