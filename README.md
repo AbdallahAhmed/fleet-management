@@ -64,11 +64,11 @@ Using route /admin/login
 
 /admin/dashboard
 
-## API Endpoints
-
 #### You Can book a seat on a trip by visiting an upcoming trip
 
 /admin/trips/{id}/book
+
+## API Endpoints
 
 assigning a user for the book and choose a source and destination to book a seat if available.
 
