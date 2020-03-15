@@ -12,6 +12,7 @@ use Tests\TestCase;
 class UserRegisterTest extends TestCase
 {
 
+    // missing register credentials
     public function testRegisterRequiresCredentials()
     {
         $response = $this->json('POST', 'api/auth/register');
@@ -25,6 +26,7 @@ class UserRegisterTest extends TestCase
             ]);
     }
 
+    // validation for password
     public function testRegisterMinimumPassword()
     {
         $faker = Faker::create();
@@ -42,6 +44,7 @@ class UserRegisterTest extends TestCase
             ]);
     }
 
+    //validation for unique email
     public function testRegisterTakenEmail()
     {
         $faker = Faker::create();
@@ -65,6 +68,7 @@ class UserRegisterTest extends TestCase
             ]);
     }
 
+    // register with correct data
     public function testRegisterSuccessfully(){
         $faker = Faker::create();
         $response = $this->json('POST', 'api/auth/register', [

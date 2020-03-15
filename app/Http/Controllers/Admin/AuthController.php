@@ -12,6 +12,11 @@ use Illuminate\Support\MessageBag;
 
 class AuthController extends Controller
 {
+    /**
+     * POST/GET admin/login
+     * @param Request $request
+     * @return Redirect
+     */
     public function login(Request $request)
     {
         if ($request->method() == "POST") {

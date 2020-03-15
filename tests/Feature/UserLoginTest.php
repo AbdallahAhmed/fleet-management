@@ -10,6 +10,7 @@ use Tests\TestCase;
 class UserLoginTest extends TestCase
 {
 
+    // wrong credentials login
     public function testInvalidLogin()
     {
         $response = $this->json('POST', 'api/auth/login', [
@@ -18,13 +19,11 @@ class UserLoginTest extends TestCase
         ]);
         $response->assertStatus(400)
             ->assertJsonStructure([
-                'errors' => [
-                    'Credentials'
-                ]
+                'errors'
             ]);
     }
 
-
+    // login with correct credentials
     public function testLoginSuccessfully()
     {
         User::where('email', 'testlogin@user.com')->delete();
