@@ -195,15 +195,24 @@ Run phpunit test cases
 
 #### Installing using docker-compose
 
-
-        cd fleet-management
-
-Install dependencies
+Installing dependencies
 
         composer install
 
-Build and run the Docker containers
+Copying .env.docker contents to .env
 
-        docker-compose build && docker-compose up -d
+        cp .env.docker .env
+        
+Build images and run the Docker containers
+
+        sudo docker-compose build && docker-compose up -d
+        
+Migrate database and seed
+        
+        sudo docker-compose exec php php artisan migrate
+        
+        sudo docker-compose exec php php artisan db:seed
         
 Visit [http://localhost:8080](http://localhost:8080) and enjooooy!
+
+#       Thank You !!!
