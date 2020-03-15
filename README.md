@@ -205,7 +205,7 @@ Copying .env.docker contents to .env
         
 Build images and run the Docker containers
 
-        sudo docker-compose build && docker-compose up -d
+        sudo docker-compose build && sudo docker-compose up -d
         
 Migrate database and seed
         
@@ -215,4 +215,4 @@ Migrate database and seed
         
 Visit [http://localhost:8080](http://localhost:8080) and enjooooy!
 
-#       Thank You !!!
+# !!!----     Thank You ----!!!
