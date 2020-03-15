@@ -177,6 +177,41 @@ class TripTest extends TestCase
             ]);
     }
 
+    // booking a seat for unknown trip
+    public function testBookSeatForUnavailableTrip()
+    {
+        Booking::where('id', '>', '1')->delete();
+        Trip::where('id', '>', '1')->delete();
+        $faker = Faker::create();
+        $user = User::create([
+            'email' => $faker->email,
+            'name' => $faker->name,
+            'password' => '123456',
+            'api_token' => User::newApiToken()
+        ]);
+        $token = $user->api_token;
+        $headers = ['Authorization' => "Bearer $token"];
+        $cities_array = City::pluck('id')->toArray();
+        $trip = Trip::create([
+            'source_id' => $cities_array[0],
+            'destination_id' => $cities_array[count($cities_array) - 1],
+            'date_to_book' => Carbon::now()->format('Y-m-d')
+        ]);
+        $payload = [
+            "start_station" => 3,
+            "end_station" => 15,
+            "trip_id" => 100
+        ];
+        $this->json('POST', '/api/trips/book', $payload, $headers)
+            ->assertStatus(400)
+            ->assertExactJson([
+                "errors" => [
+                    "message" => "Unavailable Trip!"
+                ],
+                "status" => false
+            ]);
+    }
+
     // listing available seats before the end of trip while other riders will left before the destination
     public function testAvailableSeatsBeforeEndOfTripDestination()
     {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Booking;
+use App\Trip;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -26,9 +27,13 @@ class BookingsController extends ApiController
         if ($validator->fails()) {
             return $this->errorResponse(($validator->errors()->all()));
         }
+        $trip_id = +$request->get('trip_id');
+        $trip = Trip::opened()->where('id', $trip_id)->first();
+        if (!$trip)
+            return $this->errorResponse(['message' => 'Unavailable Trip!']);
+
         $source_id = +$request->get('start_station');
         $destination_id = +$request->get('end_station');
-        $trip_id = +$request->get('trip_id');
         $user_id = Auth::guard('api')->id();
         $booked = Booking::where([
             ['trip_id', '=', $trip_id],
@@ -43,7 +48,7 @@ class BookingsController extends ApiController
             $booking->user_id = $user_id;
             $booking->seat_no = Str::random(8);
             $booking->save();
-            return $this->response(["book" =>$booking->load(['source', 'destination'])]);
+            return $this->response(["book" => $booking->load(['source', 'destination'])]);
         }
         return $this->errorResponse(['message' => 'Sorry, no available seats right now .. Please try again later!']);
     }
