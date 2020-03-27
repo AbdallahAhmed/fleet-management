@@ -174,7 +174,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Aaa\Todolist\TodolistServiceProvider::class,
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
 
     ],
