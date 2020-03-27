@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
+
+    public function __construct()
+    {
+        auth()->setDefaultDriver('api');
+    }
+
     /**
      * Return standard success response
      * @param $data

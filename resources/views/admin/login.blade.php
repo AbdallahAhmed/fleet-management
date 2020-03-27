@@ -27,6 +27,14 @@
                                        class="form-control"
                                        name="password" required placeholder="Password">
                             </div>
+                            <div class="form-group has-feedback ch">
+                                <span>
+                                <input type="checkbox"
+                                       class="form-control-input"
+                                       name="remember_me" placeholder="Password">
+                                    <label for="remember_me">remember me</label>
+                                    </span>
+                            </div>
                             <div class="row justify-content-center">
                                 <div class="col-md-3">
                                     <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>

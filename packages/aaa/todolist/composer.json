@@ -1,0 +1,24 @@
+{
+    "name": "aaa/todolist",
+    "description": "First Package Try",
+    "authors": [
+        {
+            "name": "Abdallah Ahmed",
+            "email": "abdallah.se95@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aaa\\Todolist\\TodolistServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Aaa\\Todolist\\": "src/"
+        }
+    }
+}

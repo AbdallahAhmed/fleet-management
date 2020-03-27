@@ -7,6 +7,9 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Mockery\Exception;
+use Tymon\JWTAuth\Exceptions\UserNotDefinedException;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends ApiController
 {
@@ -27,21 +30,15 @@ class AuthController extends ApiController
             $response['errors'] = $validator->errors()->all();
             return response()->json($response, '400');
         }
+        $credentials = $request->only(['email', 'password']);
 
-        $isAuthed = Auth::guard('api')->once([
-            'email' => $request->get('email'),
-            'password' => $request->get('password'),
-        ]);
-
-        if (!$isAuthed) {
-            return $this->errorResponse(["Credentials" => "Incorrect Email or Password."], 400);
+        if(!$token = auth()->attempt($credentials)){
+            return $this->errorResponse(["Credentials" => "Incorrect Email or Password."], 401);
         }
 
-        $user = Auth::guard('api')->user();
-        $user->api_token = User::newApiToken();
-        $user->save();
+        $user = auth()->user();
 
-        return $this->response(['user' => $user, 'token' => $user->api_token]);
+        return $this->response(['user' => $user, 'token' => $token]);
     }
 
     /**
@@ -67,9 +64,21 @@ class AuthController extends ApiController
         $user->name = $request->get('name');
         $user->email = $request->get('email');
         $user->password = $request->get('password');
-        $user->api_token = $user->newApiToken();
         $user->save();
 
-        return $this->response(['user' => $user, 'token' => $user->api_token]);
+        $token = JWTAuth::fromUser($user);
+
+        return $this->response(['user' => $user, 'token' => $token]);
+    }
+
+    public function me(Request $request){
+        try {
+
+            $user = auth()->claims(['role'])->userOrFail();
+
+        } catch (UserNotDefinedException $e){
+            return $this->errorResponse([$e->getMessage(), 400]);
+        }
+        return $this->response(['user' => $user]);
     }
 }

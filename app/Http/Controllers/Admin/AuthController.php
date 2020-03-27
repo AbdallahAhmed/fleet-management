@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\MessageBag;
 
@@ -36,6 +37,7 @@ class AuthController extends Controller
                 $error->add('invalid', "Incorrect Email or Password");
                 return redirect()->back()->withErrors($error->messages())->withInput($request->all());
             }
+            Auth::login(Auth::user(), $request->get('remember_me', 0) ? true : false);
             return redirect()->route('home');
         }
         return view('admin.login');
