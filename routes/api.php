@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/auth/login', 'API\AuthController@login');
 Route::post('/auth/register', 'API\AuthController@register');
 Route::post('/auth/me', 'API\AuthController@me');
+Route::post('/auth/update', 'API\AuthController@updateAccount');
 //Route::post('auth/chec')
 /*Route::group(["middleware" => ['auth']], function ($router) {
     Route::group(["prefix" => 'trips'], function ($router) {
