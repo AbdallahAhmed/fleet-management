@@ -17,8 +17,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/auth/login', 'API\AuthController@login');
 Route::post('/auth/register', 'API\AuthController@register');
-Route::post('/auth/me', 'API\AuthController@me');
-Route::post('/auth/update', 'API\AuthController@updateAccount');
+
+Route::middleware('jwt')->group(function (){
+    Route::post('/update', 'API\AuthController@updateAccount');
+
+    Route::get('/favorites', 'API\UserController@getFavorites');
+    Route::post('/addFavorite/{id}', 'API\UserController@addFavorite');
+    Route::post('/removeFavorite/{id}', 'API\UserController@removeFavorite');
+});
 //Route::post('auth/chec')
 /*Route::group(["middleware" => ['auth']], function ($router) {
     Route::group(["prefix" => 'trips'], function ($router) {

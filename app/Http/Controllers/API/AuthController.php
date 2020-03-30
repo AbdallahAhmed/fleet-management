@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Mockery\Exception;
@@ -73,26 +74,10 @@ class AuthController extends ApiController
         return $this->response(['user' => $user, 'token' => $token]);
     }
 
-    public function me(Request $request)
-    {
-        try {
-
-            $user = auth()->claims(['role'])->userOrFail();
-
-        } catch (UserNotDefinedException $e) {
-            return $this->errorResponse([$e->getMessage(), 400]);
-        }
-        return $this->response(['user' => $user]);
-    }
-
     public function updateAccount(Request $request)
     {
-        try {
-            $user = auth()->claims(['role'])->userOrFail();
+        $user = auth()->claims(['role'])->user();
 
-        } catch (UserNotDefinedException $e) {
-            return $this->errorResponse([$e->getMessage(), 400]);
-        }
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|unique:users,email,' . $user->id . ',id',
             'password' => 'min:6',
@@ -111,12 +96,12 @@ class AuthController extends ApiController
         if ($image = $request->file('image')) {
             $image_name = $image->getClientOriginalName();
             $image_directory = public_path("uploads") . date("/Y/m");
-            File::makeDirectory($image_directory, 0777, true, true);
+            Storage::makeDirectory($image_directory);
             $image->move($image_directory, $image_name);
-            $user->avatar = url('uploads').date("/Y/m/").''.$image_name;
+            $user->avatar = url('uploads') . date("/Y/m/") . '' . $image_name;
         }
         $user->save();
-        $token = JWTAuth::fromUser($user);
-        return $this->response(['user' => $user, 'token' => $token]);
+
+        return $this->response(['user' => $user, 'token' => JWTAuth::fromUser($user)]);
     }
 }

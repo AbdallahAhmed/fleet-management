@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('/shows/{id}', 'ShowsController@getShow');
 Route::get('/', function () {
     return view('welcome');
 });

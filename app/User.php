@@ -2,8 +2,10 @@
 
 namespace App;
 
+use App\Http\Controllers\ShowsController;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -31,6 +33,8 @@ class User extends Authenticatable implements JWTSubject
         'password', 'remember_token',
     ];
 
+    protected $appends = ['shows_count', 'shows_ids'];
+
 
 
     /**
@@ -57,6 +61,15 @@ class User extends Authenticatable implements JWTSubject
     {
         return Str::random(60);
     }
+
+    public function getShowsCountAttribute(){
+        return DB::table('users_shows')->where('user_id', '=', $this->id)->count();
+    }
+
+    public function getShowsIdsAttribute(){
+        return DB::table('users_shows')->where('user_id', '=', $this->id)->pluck('show_id')->toArray();
+    }
+
 
     /**
      * Set password attribute
