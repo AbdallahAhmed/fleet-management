@@ -35,7 +35,7 @@ class UserController extends ApiController
         if (!$show) {
             DB::table('users_shows')->insert(['user_id' => $user->id, 'show_id' => $id]);
         }
-        return $this->response(['shows_count' => $user->shows_count]);
+        return $this->response(['shows_count' => $user->shows_count, 'shows_ids' => $user->shows_ids]);
     }
 
     public function removeFavorite($id)
@@ -46,7 +46,7 @@ class UserController extends ApiController
             'show_id' => $id
         ])->delete();
 
-        return $this->response(['shows_count' => $user->shows_count]);
+        return $this->response(['shows_count' => $user->shows_count, 'shows_ids' => $user->shows_ids]);
     }
 
 }
